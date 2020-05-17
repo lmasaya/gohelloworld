@@ -1,15 +1,12 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'ecs-deploy:1.10.1' }
+    }
     stages {
         stage('Test') {
             steps {
-                sh './gradlew check'
+                sh 'ecs scale --help'
             }
-        }
-    }
-    post {
-        always {
-            junit 'build/reports/**/*.xml'
         }
     }
 }
