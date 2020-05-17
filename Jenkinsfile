@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'ecs-deploy:1.10.1' }
+        docker { image 'fabfuel/ecs-deploy:1.10.1' }
     }
     stages {
         stage('Test') {
